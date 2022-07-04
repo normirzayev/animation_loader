@@ -1,0 +1,143 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: silver;
+  overflow: hidden;
+}
+/* loader */
+.loader{
+  width:  600px;
+  height: 30px;
+  box-shadow: inset 0 0 10px black;
+  margin: 150px auto;
+  border-radius: 20px;
+  padding: 5px;
+}
+.loader > .load{
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  border-radius: 20px;
+  animation-name: load;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes load {
+  0%{
+    width: 0%;
+  }
+  40%{
+    width: 30%;
+  }
+  45%{
+    width: 40%;
+  }
+  50%{
+    width: 50%;
+  }
+  75%{
+    width: 70%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+.boxer{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 50%;
+
+  animation: sakra 1.5s infinite ease-in-out alternate;
+}
+.box:nth-child(2){
+  animation-delay: 0.7s;
+}
+.box:nth-child(3){
+  animation-delay: 1s;
+}
+@keyframes sakra {
+  0%{
+    transform: translate(0, 0);
+  }
+  100%{
+    transform: translate(0, -140px);
+  }
+}
+/* doira */
+.doira{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient( to top, red, blue, aqua, yellow, green , brown);
+  padding: 15px;
+  display: inline-block;
+
+  animation: aylan 1s infinite linear;
+}
+.kichik_doira{
+  width: 100%;
+  height: 100%;
+  background-color: silver;
+  border-radius: 50%;
+}
+
+@keyframes aylan {
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+/* yurak */
+.yurak{
+  display: inline-block;
+  position: relative;
+  top: -250px;
+  left: 200px;
+  animation: yurak 1s infinite linear alternate;
+}
+.yurak::after, .yurak::before{
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+  background-color: red;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform-origin: bottom;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.yurak::before{
+  transform: rotate(-45deg);
+  left: 70px;
+}
+
+@keyframes yurak{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.3);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
